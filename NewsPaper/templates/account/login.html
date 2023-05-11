@@ -1,0 +1,37 @@
+{% extends 'account/default.html' %}
+
+{% block title %}
+Login
+{% endblock title %}
+
+{% block sign_content %}
+<div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
+<div class="col-lg-6 p-5">
+    <div class="p-5">
+        <div class="text-center">
+            <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
+        </div>
+
+        <form class="user" method="post" action="{% url 'account_login' %}">
+            {% include 'form/form.html' %}
+            <input type="submit" class="btn btn-primary btn-user btn-block"
+                   value="Login" />
+            <hr>
+            {% include 'socialaccount/snippets/provider_list.html' with process='login' provider_message='Login with ' %}
+            </form>
+        <hr>
+        <div class="text-center">
+            <a class="small"
+               href="{% url 'account_reset_password' %}">
+               Forgot Password?
+            </a>
+        </div>
+        <div class="text-center">
+            <a class="small"
+               href="{% url 'account_signup' %}">
+                Create an Account!
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock sign_content %}

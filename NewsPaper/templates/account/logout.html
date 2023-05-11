@@ -1,0 +1,23 @@
+{% extends 'account/default.html' %}
+
+{% block title %}
+Log out
+{% endblock title %}
+
+{% block sign_content %}
+<div class="col-lg-6 p-5">
+    <div class="p-5">
+        <div class="text-center">
+            <h1 class="h4 text-gray-900 mb-4">
+                Are you sure you want to log out?
+            </h1>
+        </div>
+        <form method="post" class="d-flex justify-content-center"
+              action="{% url 'account_logout' %}">
+            {% include 'form/form.html' %}
+            <input type="submit" class="btn btn-primary btn-user"
+                   value="Log out" />
+        </form>
+    </div>
+</div>
+{% endblock sign_content %}

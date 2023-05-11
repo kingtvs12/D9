@@ -1,0 +1,24 @@
+<!-- allauth base template -->
+
+{% extends 'account/default.html' %}
+
+{% block title %}
+{% block head_title %}{% endblock head_title %}
+{% endblock title %}
+
+{% block sign_content %}
+<div class="col-lg-5 d-none d-lg-block bg-register-image"></div>
+<div class="col-lg-7">
+    <script>
+        document.getElementById("sign-default-row").scrollIntoView();
+    </script>
+    <div class="p-5">
+        {% block body %}
+        {% block content %}
+        {% endblock content %}
+        {% endblock body %}
+        {% block extra_body %}
+        {% endblock extra_body %}
+    </div>
+</div>
+{% endblock sign_content %}
